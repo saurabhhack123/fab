@@ -1,37 +1,28 @@
 <?php
 
+include_once "../connection/db.php";
+
 class Order
 {  
-
    
-   function __construct($email_id){
+   var $status;
+
+   function __construct(){
+
+     $this->status = 0;
    }
+   
+   function create($email_id,$status){
+      
+      $created_at = date("Y-m-d:h:i:s");
 
-   function create(){
-
-   	
+      $this->email_id   = $email_id;
+      $this->status     = $status;
+      $this->created_at = $created_at;
+   
    }
-
-   function update(){
-
-
-   }
-
-   function today_order(){
-
-   	$date = date("Y-m-d:h:i:s");
-
-   }
-
-   function delete(){
-
-   }
-
-   function index(){
-
-
-   }
-
+    
  }
+ 
 
 ?>
